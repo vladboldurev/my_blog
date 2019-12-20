@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Ошибка при активации {% endblock title%}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12 col-lg-12">
+            <div class="content-wrap">
+                <h2>Активация</h2>
+                <p>Акттвация пользователя произошла с ошибкой</p>
+                <p><a href="{% url 'register' %}">Зарегистрироваться</a></p>
+            </div><!-- .content-wrap -->
+        </div><!-- .col -->
+    </div><!-- .row -->
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+
+{% block title %} Профайл {% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12 col-lg-12">
+            <div class="content-wrap">
+                <h2>Hello {{ user.email }}</h2>
+                <p>{{ user.email }}</p>
+                <p>{{ user.send_messages }}</p>
+                <a href="{{ user.get_update_url }}"><button class="btn btn-primary" type="submit">Edit</button></a>
+                <a href="{{ user.get_delete_url }}"><button class="btn btn-primary" type="submit">Delete</button></a>
+            </div><!-- .content-wrap -->
+        </div><!-- .col -->
+    </div><!-- .row -->
+{% endblock %}

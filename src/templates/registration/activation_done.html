@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Активация выполнена {% endblock title%}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12 col-lg-12">
+            <div class="content-wrap">
+                <h2>Активация</h2>
+                <p>Пользователь успешно активирован</p>
+                <p><a href="{% url 'login' %}">Вход на сайт</a></p>
+            </div><!-- .content-wrap -->
+        </div><!-- .col -->
+    </div><!-- .row -->
+
+{% endblock content %}
