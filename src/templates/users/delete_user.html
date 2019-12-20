@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %} User deletion {% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12 col-lg-12">
+            <div class="content-wrap">
+                <h2> User {{ user.email }} deletion</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+            </div><!-- .content-wrap -->
+        </div><!-- .col -->
+    </div><!-- .row -->
+{% endblock %}
