@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+    db:
+        image: postgres:11
+        volumes: 
+            - postgres_data:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=*
+            - POSTGRES_PASSWORD=*
+            - POSTGRES_DB=*
+    web:
+        build: .
+#        command:  gunicorn myblog_project.wsgi -b 0.0.0.0:8000
+        command:  python /code/manage.py runserver 0.0.0.0:8000
+        environment:
+            - SECRET_KEY=*
+            - DEBUG=True
+            - ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+            - SQL_ENGINE=django.db.backends.postgresql
+            - SQL_DATABASE=*
+            - SQL_USER=*
+            - SQL_PASSWORD=*
+            - SQL_HOST=127.0.0.1
+            - SQL_PORT=5432
+        volumes:
+            - .:/code
+        ports:
+            - 8000:8000
+        depends_on:
+            - db
+        
+volumes:
+    postgres_data:
